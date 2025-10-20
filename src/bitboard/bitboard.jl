@@ -5,6 +5,7 @@ import Base.show, Base.display, Base.maximum
 const ROWMASK = UInt16(2^16 - 1)
 const CELLMASK = UInt16(2^4 - 1)
 const MASK = UInt8(15)
+const LEFT, LEFT_REWARD, RIGHT, RIGHT_REWARD = make_row_lookup()
 
 """
 Bsed on the benchmarks I have done. It's quicker to precompute the results for all rows and make a
@@ -12,7 +13,7 @@ set of lookup table that looks up the result of moving left or right.
 
 One of the Rust repositories have taken this approach.
 """
-const LEFT, LEFT_REWARD, RIGHT, RIGHT_REWARD = make_row_lookup()
+(LEFT, LEFT_REWARD, RIGHT, RIGHT_REWARD)
 
 """
 A gameboard is stored on a UInt (64bit)
